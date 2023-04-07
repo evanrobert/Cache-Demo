@@ -1,6 +1,7 @@
 package com.example.cache.demo.EmployeeSetup;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,8 @@ public class EmployeeController {
 
     @Autowired
     EmployeeService employeeService;
+    @Autowired
+    CacheManager cacheManager;
 
     // Mapping to add a new Employee to the Repository
     @PostMapping("/employees")
